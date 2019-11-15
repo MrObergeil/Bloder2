@@ -19,6 +19,12 @@ class LessonAdapter: RecyclerView.Adapter<LessonViewHolder>() {
         return lessonList.size
     }
 
+
+    fun updateList(newList: List<Lesson>) {
+        lessonList = newList
+        notifyDataSetChanged()
+    }
+
     override fun onBindViewHolder(holder: LessonViewHolder, position: Int) {
        val lesson = lessonList[position]
         holder.bindItem(lesson)
